@@ -1,0 +1,23 @@
+# .NET Core / ASP.NET
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+*.vs/
+*.vscode/
+*.idea/
+
+# Rider
+.idea/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# NuGet
+*.nupkg
+*.snupkg
