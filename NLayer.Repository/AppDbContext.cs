@@ -10,12 +10,12 @@ namespace NLayer.Repository
         {  
         }
 
-        DbSet<Admins> Admins { get; set; }
-        DbSet<Albume> Albumes { get; set; }
-        DbSet<News> News { get; set; }
-        DbSet<NewsComments> NewsComments { get; set; }
-        DbSet<PictureComments> PictureComments { get; set; }
-        DbSet<Pictures> Pictures { get; set; }
+        public DbSet<Admins> Admins { get; set; }
+        public DbSet<Albume> Albumes { get; set; }
+        public DbSet<News> News { get; set; }
+        public DbSet<NewsComments> NewsComments { get; set; }
+        public DbSet<PictureComments> PictureComments { get; set; }
+        public DbSet<Pictures> Pictures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
