@@ -12,5 +12,8 @@ namespace NLayer.Core.Entities
         public string Comment { get; set; }
         public string CommentedBy { get; set; }
         public DateTime CommentedDate { get; set; }
+
+        public int NewsId { get; set; }
+        public News News { get; set; }
     }
 }

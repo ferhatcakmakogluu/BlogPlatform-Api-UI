@@ -17,7 +17,6 @@ namespace NLayer.Core.Entities
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
     
-        public int PicturesId { get; set; }
         public List<Pictures> Pictures { get; set; }
     }
 }
