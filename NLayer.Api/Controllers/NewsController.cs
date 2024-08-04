@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.DTOs;
 using NLayer.Core.Entities;
 using NLayer.Core.Services;
+using NLayer.Service.Services;
 
 namespace NLayer.Api.Controllers
 {
@@ -60,6 +61,13 @@ namespace NLayer.Api.Controllers
         {
             var news = await _newsService.GetByIdAsync(id);
             await _newsService.Remove(news);
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteMergeNews(List<NewsDto> newsDtos)
+        {
+            await _newsService.RemoveMerge(_mapper.Map<List<News>>(newsDtos));
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
     }

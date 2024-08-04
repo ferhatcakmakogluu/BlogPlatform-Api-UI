@@ -55,5 +55,12 @@ namespace NLayer.Api.Controllers
             await _newsCommentsService.Remove(comment);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteMergeComment(List<NewsCommentsDto> newsCommentsDtos)
+        {
+            await _newsCommentsService.RemoveMerge(_mapper.Map<List<NewsComments>>(newsCommentsDtos));
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        }
     }
 }
