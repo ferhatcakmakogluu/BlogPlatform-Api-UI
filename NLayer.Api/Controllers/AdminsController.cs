@@ -38,7 +38,7 @@ namespace NLayer.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveAdmin(AdminsDto adminDto)
         {
-            var response = await _adminService.AddAsync(_mapper.Map<Admins>(adminDto));
+            await _adminService.AddAsync(_mapper.Map<Admins>(adminDto));
             return CreateActionResult(CustomResponseDto<AdminsDto>.Success(201,adminDto));
         }
 
