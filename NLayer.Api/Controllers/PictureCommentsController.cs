@@ -41,13 +41,6 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<PictureCommentsDto>.Success(201, pictureCommentsDto));
         }
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> SaveRangeComment(List<PictureCommentsDto> pictureCommentsDto)
-        {
-            await _pictureCommentsService.AddRangeAsync(_mapper.Map<List<PictureComments>>(pictureCommentsDto));
-            return CreateActionResult(CustomResponseDto<List<PictureCommentsDto>>.Success(201, pictureCommentsDto));
-        }
-
         [HttpPut]
         public async Task<IActionResult> UpdateComment(PictureCommentsDto pictureCommentsDto)
         {
@@ -56,9 +49,10 @@ namespace NLayer.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteComment(PictureCommentsDto pictureCommentsDto)
+        public async Task<IActionResult> DeleteComment(int id)
         {
-            await _pictureCommentsService.Remove(_mapper.Map<PictureComments>(pictureCommentsDto));
+            var comment = await _pictureCommentsService.GetByIdAsync(id);
+            await _pictureCommentsService.Remove(comment);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 

@@ -53,7 +53,7 @@ namespace NLayer.Api.Controllers
         public async Task<IActionResult> RemoveAdmin(int id)
         {
             var admin = await _adminService.GetByIdAsync(id);
-            var response = _adminService.Remove(admin);
+            await _adminService.Remove(admin);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
     }
