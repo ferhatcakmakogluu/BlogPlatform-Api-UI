@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NLayer.Repository;
 
@@ -11,9 +12,11 @@ using NLayer.Repository;
 namespace NLayer.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240805114124_updateNewsTableToIsPinned")]
+    partial class updateNewsTableToIsPinned
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,19 +114,19 @@ namespace NLayer.Repository.Migrations
                         {
                             Id = 1,
                             AlbumeName = "Albume 1",
-                            CreatedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7561)
+                            CreatedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8674)
                         },
                         new
                         {
                             Id = 2,
                             AlbumeName = "Albume 2",
-                            CreatedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7571)
+                            CreatedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8682)
                         },
                         new
                         {
                             Id = 3,
                             AlbumeName = "Albume 3",
-                            CreatedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7572)
+                            CreatedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8683)
                         });
                 });
 
@@ -170,34 +173,25 @@ namespace NLayer.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7705),
+                            CreatedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8819),
                             Description = "Description 1",
-                            DislikeCount = 0,
                             IsPinned = false,
-                            LikeCount = 0,
-                            ReadCount = 0,
                             Title = "News 1"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7707),
+                            CreatedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8821),
                             Description = "Description 2",
-                            DislikeCount = 0,
                             IsPinned = false,
-                            LikeCount = 0,
-                            ReadCount = 0,
                             Title = "News 2"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7708),
+                            CreatedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8822),
                             Description = "Description 3",
-                            DislikeCount = 0,
                             IsPinned = false,
-                            LikeCount = 0,
-                            ReadCount = 0,
                             Title = "News 3"
                         });
                 });
@@ -238,7 +232,7 @@ namespace NLayer.Repository.Migrations
                             Id = 1,
                             Comment = "Comment 1",
                             CommentedBy = "User 1",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7634),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8742),
                             NewsId = 1
                         },
                         new
@@ -246,7 +240,7 @@ namespace NLayer.Repository.Migrations
                             Id = 2,
                             Comment = "Comment 2",
                             CommentedBy = "User 2",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7635),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8744),
                             NewsId = 1
                         },
                         new
@@ -254,7 +248,7 @@ namespace NLayer.Repository.Migrations
                             Id = 3,
                             Comment = "Comment 3",
                             CommentedBy = "User 3",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7637),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8745),
                             NewsId = 2
                         },
                         new
@@ -262,7 +256,7 @@ namespace NLayer.Repository.Migrations
                             Id = 4,
                             Comment = "Comment 4",
                             CommentedBy = "User 4",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7638),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8746),
                             NewsId = 3
                         });
                 });
@@ -303,7 +297,7 @@ namespace NLayer.Repository.Migrations
                             Id = 1,
                             Comment = "Comment 1",
                             CommentedBy = "User 1",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7768),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8876),
                             PicturesId = 1
                         },
                         new
@@ -311,7 +305,7 @@ namespace NLayer.Repository.Migrations
                             Id = 2,
                             Comment = "Comment 2",
                             CommentedBy = "User 2",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7769),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8878),
                             PicturesId = 1
                         },
                         new
@@ -319,7 +313,7 @@ namespace NLayer.Repository.Migrations
                             Id = 3,
                             Comment = "Comment 3",
                             CommentedBy = "User 3",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7771),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8879),
                             PicturesId = 2
                         },
                         new
@@ -327,7 +321,7 @@ namespace NLayer.Repository.Migrations
                             Id = 4,
                             Comment = "Comment 4",
                             CommentedBy = "User 4",
-                            CommentedDate = new DateTime(2024, 8, 5, 14, 52, 7, 92, DateTimeKind.Local).AddTicks(7772),
+                            CommentedDate = new DateTime(2024, 8, 5, 14, 41, 24, 694, DateTimeKind.Local).AddTicks(8880),
                             PicturesId = 3
                         });
                 });
@@ -364,32 +358,24 @@ namespace NLayer.Repository.Migrations
                         {
                             Id = 1,
                             AlbumeId = 1,
-                            PictureDislike = 0,
-                            PictureLike = 0,
                             PictureUrl = "/Pictures/1"
                         },
                         new
                         {
                             Id = 2,
                             AlbumeId = 1,
-                            PictureDislike = 0,
-                            PictureLike = 0,
                             PictureUrl = "/Pictures/2"
                         },
                         new
                         {
                             Id = 3,
                             AlbumeId = 2,
-                            PictureDislike = 0,
-                            PictureLike = 0,
                             PictureUrl = "/Pictures/3"
                         },
                         new
                         {
                             Id = 4,
                             AlbumeId = 3,
-                            PictureDislike = 0,
-                            PictureLike = 0,
                             PictureUrl = "/Pictures/4"
                         });
                 });

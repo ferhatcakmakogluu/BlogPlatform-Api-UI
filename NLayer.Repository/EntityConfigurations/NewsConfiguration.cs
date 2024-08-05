@@ -17,7 +17,6 @@ namespace NLayer.Repository.EntityConfigurations
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Title).IsRequired().HasMaxLength(350);
             builder.Property(x => x.Description).IsRequired().HasColumnType("text");
-            builder.Property(x => x.IsPinned).IsRequired();
         }
     }
 }

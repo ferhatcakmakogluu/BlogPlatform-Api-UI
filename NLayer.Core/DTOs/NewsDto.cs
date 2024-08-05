@@ -11,9 +11,9 @@ namespace NLayer.Core.DTOs
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int? ReadCount { get; set; }
-        public int? LikeCount { get; set; }
-        public int? DislikeCount { get; set; }
-        public bool IsPinned { get; set; }
+        public int? ReadCount { get; set; } = 0;
+        public int? LikeCount { get; set; } = 0;
+        public int? DislikeCount { get; set; } = 0;
+        public bool? IsPinned { get; set; } = false;
     }
 }

@@ -10,8 +10,8 @@ namespace NLayer.Core.DTOs
     {
         public int Id { get; set; }
         public string PictureUrl { get; set; }
-        public int? PictureLike { get; set; }
-        public int? PictureDislike { get; set; }
+        public int? PictureLike { get; set; } = 0;
+        public int? PictureDislike { get; set; } = 0;
         public int AlbumeId { get; set; }
     }
 }
