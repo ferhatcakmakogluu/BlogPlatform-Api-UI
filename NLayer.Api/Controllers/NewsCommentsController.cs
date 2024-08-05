@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NLayer.Api.Filters;
 using NLayer.Core.DTOs;
 using NLayer.Core.Entities;
 using NLayer.Core.Services;
@@ -26,6 +27,7 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<List<NewsCommentsDto>>.Success(200,commentsDto));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<NewsComments>))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCommentById(int id)
         {
@@ -48,6 +50,7 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<NewsComments>))]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteComment(int id)
         {

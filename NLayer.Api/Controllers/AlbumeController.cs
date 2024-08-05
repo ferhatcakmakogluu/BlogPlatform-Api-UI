@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NLayer.Api.Filters;
 using NLayer.Core.DTOs;
 using NLayer.Core.Entities;
 using NLayer.Core.Services;
@@ -27,6 +28,7 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<List<AlbumeDto>>.Success(200, albumesDto));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<Albume>))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAlbumById(int id)
         {
@@ -49,6 +51,7 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<Albume>))]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveAlbume(int id)
         {

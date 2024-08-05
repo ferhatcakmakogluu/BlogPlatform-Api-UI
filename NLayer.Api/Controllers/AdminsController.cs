@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using NLayer.Api.Filters;
 using NLayer.Core.DTOs;
 using NLayer.Core.Entities;
 using NLayer.Core.Services;
@@ -27,6 +28,7 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<List<AdminsDto>>.Success(200,adminsDto));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<Admins>))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -49,6 +51,7 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<Admins>))]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveAdmin(int id)
         {

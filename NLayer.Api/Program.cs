@@ -43,6 +43,9 @@ builder.Services.AddDbContext<AppDbContext>(x =>
     });
 });
 
+//custom filter service
+builder.Services.AddScoped(typeof(NotFoundServiceFilter<>));
+
 //Autofac added
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(cb => cb.RegisterModule(new RepoServiceModule()));
