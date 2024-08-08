@@ -4,14 +4,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NLayer.Repository.Repositories
 {
     public class AlbumeRepository : GenericRepository<Albume>, IAlbumeRepository
     {
-        public AlbumeRepository(AppDbContext dbContext) : base(dbContext)
+        private readonly AppDbContext _context;
+        public AlbumeRepository(AppDbContext contex, AppDbContext context) : base(contex)
         {
+            _context = context;
+        }
+
+        public async Task<List<Albume>> GetAlbumeWithPictures()
+        {
+            return await _context.Albumes.Include(x=> x.Pictures).ToListAsync();
         }
     }
 }

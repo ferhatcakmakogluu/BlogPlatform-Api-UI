@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.Core.Repositories
+namespace NLayer.Core.DTOs
 {
-    public interface IAlbumeRepository : IGenericRepository<Albume>
+    public class AlbumeWithPicturesDto : AlbumeDto
     {
-        Task<List<Albume>> GetAlbumeWithPictures();
+        public List<PicturesDto> Pictures { get; set; }
     }
 }
