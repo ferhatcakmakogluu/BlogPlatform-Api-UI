@@ -44,6 +44,14 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<List<AlbumeWithPicturesDto>>.Success(200, data));
         }
 
+        [ServiceFilter(typeof(NotFoundServiceFilter<Albume>))]
+        [HttpGet("[action]/{albumeId}")]
+        public async Task<IActionResult> GetAlbumeWithPicturesById(int albumeId)
+        {
+            var data = await _albumeService.GetAllAlbumeWithPicturesById(albumeId);
+            return CreateActionResult(CustomResponseDto<AlbumeWithPicturesDto>.Success(200, data));
+        }
+
         [HttpPost]
         public async Task<IActionResult> SaveAlbume(AlbumeDto albumeDto)
         {

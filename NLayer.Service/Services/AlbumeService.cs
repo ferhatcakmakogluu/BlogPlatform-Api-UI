@@ -28,5 +28,12 @@ namespace NLayer.Service.Services
             var dataDto = _mapper.Map<List<AlbumeWithPicturesDto>>(data);
             return dataDto;
         }
+
+        public async Task<AlbumeWithPicturesDto> GetAllAlbumeWithPicturesById(int albumeId)
+        {
+            var data = await _albumeRepository.GetAlbumeWithPicturesById(albumeId);
+            var dataDto = _mapper.Map<AlbumeWithPicturesDto>(data);
+            return dataDto;
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace NLayer.Core.Services
     public interface IPicturesService : IService<Pictures>
     {
         Task<List<PictureWithComments>> GetPictureWithComments();
+        Task<PictureWithComments> GetPictureWithCommentsById(int pictureId);
     }
 }

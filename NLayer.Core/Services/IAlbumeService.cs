@@ -11,5 +11,6 @@ namespace NLayer.Core.Services
     public interface IAlbumeService : IService<Albume>
     {
         Task<List<AlbumeWithPicturesDto>> GetAllAlbumeWithPictures();
+        Task<AlbumeWithPicturesDto> GetAllAlbumeWithPicturesById(int albumeId);
     }
 }

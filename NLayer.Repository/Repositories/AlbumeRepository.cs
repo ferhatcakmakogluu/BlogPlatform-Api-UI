@@ -24,5 +24,10 @@ namespace NLayer.Repository.Repositories
         {
             return await _context.Albumes.Include(x=> x.Pictures).ToListAsync();
         }
+
+        public async Task<Albume> GetAlbumeWithPicturesById(int albumeId)
+        {
+            return await _context.Albumes.Include(x => x.Pictures).Where(x => x.Id == albumeId).FirstOrDefaultAsync();
+        }
     }
 }

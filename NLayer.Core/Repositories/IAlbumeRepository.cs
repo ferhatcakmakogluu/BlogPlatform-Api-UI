@@ -10,5 +10,6 @@ namespace NLayer.Core.Repositories
     public interface IAlbumeRepository : IGenericRepository<Albume>
     {
         Task<List<Albume>> GetAlbumeWithPictures();
+        Task<Albume> GetAlbumeWithPicturesById(int albumeId);
     }
 }

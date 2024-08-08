@@ -43,6 +43,14 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<List<PictureWithComments>>.Success(200, data));
         }
 
+        [ServiceFilter(typeof (NotFoundServiceFilter<Pictures>))]
+        [HttpGet("[action]/{pictureId}")]
+        public async Task<IActionResult> GetPictureWithCommentsById(int pictureId)
+        {
+            var data = await _picturesService.GetPictureWithCommentsById(pictureId);
+            return CreateActionResult(CustomResponseDto<PictureWithComments>.Success(200, data));
+        }
+
         [HttpPost]
         public async Task<IActionResult> SavePicture(PicturesDto pictureDto)
         {
