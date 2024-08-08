@@ -9,5 +9,7 @@ namespace NLayer.Core.Repositories
 {
     public interface INewsRepository : IGenericRepository<News>
     {
+        Task<List<News>> GetNewsWithComments();
+        Task<News> GetNewsWithCommentsById(int newsId);
     }
 }

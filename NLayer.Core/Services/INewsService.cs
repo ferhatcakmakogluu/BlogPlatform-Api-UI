@@ -1,4 +1,5 @@
-﻿using NLayer.Core.Entities;
+﻿using NLayer.Core.DTOs;
+using NLayer.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace NLayer.Core.Services
 {
     public interface INewsService : IService<News>
     {
+        Task<List<NewsWithCommentsDto>> GetNewsWithComments();
+        Task<NewsWithCommentsDto> GetNewsWithCommentsById(int newsId);
     }
 }

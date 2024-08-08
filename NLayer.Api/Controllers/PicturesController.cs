@@ -40,7 +40,7 @@ namespace NLayer.Api.Controllers
         public async Task<IActionResult> GetPictureWithComments()
         {
             var data = await _picturesService.GetPictureWithComments();
-            return CreateActionResult(CustomResponseDto<List<PictureWithComments>>.Success(200, data));
+            return CreateActionResult(CustomResponseDto<List<PictureWithCommentsDto>>.Success(200, data));
         }
 
         [ServiceFilter(typeof (NotFoundServiceFilter<Pictures>))]
@@ -48,7 +48,7 @@ namespace NLayer.Api.Controllers
         public async Task<IActionResult> GetPictureWithCommentsById(int pictureId)
         {
             var data = await _picturesService.GetPictureWithCommentsById(pictureId);
-            return CreateActionResult(CustomResponseDto<PictureWithComments>.Success(200, data));
+            return CreateActionResult(CustomResponseDto<PictureWithCommentsDto>.Success(200, data));
         }
 
         [HttpPost]

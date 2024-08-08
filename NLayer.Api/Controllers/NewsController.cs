@@ -37,6 +37,21 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<NewsDto>.Success(200, newsDto));
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetNewsWithComments()
+        {
+            var data = await _newsService.GetNewsWithComments();
+            return CreateActionResult(CustomResponseDto<List<NewsWithCommentsDto>>.Success(200, data));
+        }
+
+        [ServiceFilter(typeof (NotFoundServiceFilter<News>))]
+        [HttpGet("[action]/{newsId}")]
+        public async Task<IActionResult> GetNewsWithCommentsById(int newsId)
+        {
+            var data = await _newsService.GetNewsWithCommentsById(newsId);
+            return CreateActionResult(CustomResponseDto<NewsWithCommentsDto>.Success(200, data));
+        }
+
         [HttpPost]
         public async Task<IActionResult> SaveNews(NewsDto newsDto)
         {

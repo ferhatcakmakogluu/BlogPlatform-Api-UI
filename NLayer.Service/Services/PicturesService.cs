@@ -22,17 +22,17 @@ namespace NLayer.Service.Services
             _pictureRepository = pictureRepository;
         }
 
-        public async Task<List<PictureWithComments>> GetPictureWithComments()
+        public async Task<List<PictureWithCommentsDto>> GetPictureWithComments()
         {
             var data = await _pictureRepository.GetPictureWithComments();
-            var dataDto = _mapper.Map<List<PictureWithComments>>(data);
+            var dataDto = _mapper.Map<List<PictureWithCommentsDto>>(data);
             return dataDto;
         }
 
-        public async Task<PictureWithComments> GetPictureWithCommentsById(int pictureId)
+        public async Task<PictureWithCommentsDto> GetPictureWithCommentsById(int pictureId)
         {
             var data = await _pictureRepository.GetPictureWithCommentsById(pictureId);
-            var dataDto = _mapper.Map<PictureWithComments>(data);
+            var dataDto = _mapper.Map<PictureWithCommentsDto>(data);
             return dataDto;
         }
     }
