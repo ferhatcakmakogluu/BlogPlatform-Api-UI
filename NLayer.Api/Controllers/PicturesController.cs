@@ -36,6 +36,13 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<PicturesDto>.Success(200, pictureDto));
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetPictureWithComments()
+        {
+            var data = await _picturesService.GetPictureWithComments();
+            return CreateActionResult(CustomResponseDto<List<PictureWithComments>>.Success(200, data));
+        }
+
         [HttpPost]
         public async Task<IActionResult> SavePicture(PicturesDto pictureDto)
         {

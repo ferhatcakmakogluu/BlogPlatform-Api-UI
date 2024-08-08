@@ -9,5 +9,6 @@ namespace NLayer.Core.Repositories
 {
     public interface IPictureRepository : IGenericRepository<Pictures>
     {
+        Task<List<Pictures>> GetPictureWithComments();
     }
 }

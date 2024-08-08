@@ -20,6 +20,7 @@ namespace NLayer.Service.Mapping
             CreateMap<Pictures,PicturesDto>().ReverseMap();
             CreateMap<PictureComments,PictureCommentsDto>().ReverseMap();
             CreateMap<Albume, AlbumeWithPicturesDto>().ReverseMap();
+            CreateMap<Pictures,PictureWithComments>().ReverseMap();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using NLayer.Core.Entities;
+﻿using AutoMapper;
+using NLayer.Core.DTOs;
+using NLayer.Core.Entities;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
@@ -12,8 +14,19 @@ namespace NLayer.Service.Services
 {
     public class PicturesService : Service<Pictures>, IPicturesService
     {
-        public PicturesService(IGenericRepository<Pictures> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        private readonly IPictureRepository _pictureRepository;
+        private readonly IMapper _mapper;
+        public PicturesService(IGenericRepository<Pictures> repository, IUnitOfWork unitOfWork, IMapper mapper = null, IPictureRepository pictureRepository = null) : base(repository, unitOfWork)
         {
+            _mapper = mapper;
+            _pictureRepository = pictureRepository;
+        }
+
+        public async Task<List<PictureWithComments>> GetPictureWithComments()
+        {
+            var data = await _pictureRepository.GetPictureWithComments();
+            var dataDto = _mapper.Map<List<PictureWithComments>>(data);
+            return dataDto;
         }
     }
 }

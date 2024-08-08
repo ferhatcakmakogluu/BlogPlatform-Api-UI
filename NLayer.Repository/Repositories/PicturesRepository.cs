@@ -1,4 +1,5 @@
-﻿using NLayer.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using NLayer.Core.Entities;
 using NLayer.Core.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,15 @@ namespace NLayer.Repository.Repositories
 {
     public class PicturesRepository : GenericRepository<Pictures>, IPictureRepository
     {
-        public PicturesRepository(AppDbContext dbContext) : base(dbContext)
+        private readonly AppDbContext _context;
+        public PicturesRepository(AppDbContext dbContext, AppDbContext context) : base(dbContext)
         {
+            _context = context;
+        }
+
+        public async Task<List<Pictures>> GetPictureWithComments()
+        {
+            return await _context.Pictures.Include(x=>x.PictureComments).ToListAsync();
         }
     }
 }
