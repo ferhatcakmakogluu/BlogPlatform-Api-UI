@@ -52,6 +52,13 @@ namespace NLayer.Api.Controllers
             return CreateActionResult(CustomResponseDto<AlbumeWithPicturesDto>.Success(200, data));
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAlbumeWithPicturesAndComments()
+        {
+            var data = await _albumeService.GetAlbumeWithPicturesAndComments();
+            return CreateActionResult(CustomResponseDto<List<AlbumeWithPicturesAndCommentsDto>>.Success(200, data));
+        }
+
         [HttpPost]
         public async Task<IActionResult> SaveAlbume(AlbumeDto albumeDto)
         {

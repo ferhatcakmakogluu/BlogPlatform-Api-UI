@@ -1,4 +1,5 @@
-﻿using NLayer.Core.Entities;
+﻿using NLayer.Core.DTOs;
+using NLayer.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace NLayer.Core.Repositories
     {
         Task<List<Albume>> GetAlbumeWithPictures();
         Task<Albume> GetAlbumeWithPicturesById(int albumeId);
+        Task<List<AlbumeWithPicturesAndCommentsDto>> GetAlbumeWithPicturesAndCommentsAsync();
     }
 }

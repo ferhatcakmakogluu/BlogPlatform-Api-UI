@@ -12,5 +12,6 @@ namespace NLayer.Core.Services
     {
         Task<List<AlbumeWithPicturesDto>> GetAllAlbumeWithPictures();
         Task<AlbumeWithPicturesDto> GetAllAlbumeWithPicturesById(int albumeId);
+        Task<List<AlbumeWithPicturesAndCommentsDto>> GetAlbumeWithPicturesAndComments();
     }
 }
