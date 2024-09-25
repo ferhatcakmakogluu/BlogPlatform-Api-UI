@@ -1,4 +1,5 @@
-﻿@{
+﻿@model AdminsDto
+@{
     Layout = null;
 }
 <head>
@@ -10,18 +11,19 @@
             <div class="admin-login-container">
                 <h1>Admin Panel Girişi 👏</h1>
 
-                <form>
-                    <label for="email">Kullanıcı Adı:</label>
+                <form asp-controller="Admin" asp-action="Index" method="post">
+                    <label for="UserName">Kullanıcı Adı:</label>
                     <div class="custome-input">
-                        <input type="email" name="email" placeholder="Kullanıcı adınız" autocomplete="off">
+                        <input asp-for="UserName" type="text" name="UserName" placeholder="Kullanıcı Adınız" autocomplete="off">
                         <i class='bx bx-at'></i>
                     </div>
-                    <label for="password">Şifre:</label>
+                    <label for="Password">Şifre:</label>
                     <div class="custome-input">
-                        <input type="password" name="password" placeholder="Şifreniz">
+                        <input asp-for="Password" type="password" name="Password" placeholder="Şifreniz" autocomplete="off">
                         <i class='bx bx-lock-alt'></i>
                     </div>
-                    <button class="login">Giriş Yap</button>
+                    <span style="color:red">@ViewBag.AdminLoginErrorMessage</span>
+                    <button type="submit" class="login">Giriş Yap</button>
                 </form>
             </div>
         </div>
