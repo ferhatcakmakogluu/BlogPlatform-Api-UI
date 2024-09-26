@@ -21,64 +21,53 @@
         </div>
 
         <div class="sidebar">
-            <a href="#" class="active">
+            <a asp-action="Dashboard" asp-controller="Admin" class="@(ViewContext.RouteData.Values["controller"].ToString() =="Admin" && ViewContext.RouteData.Values["action"].ToString() == "Dashboard" ? "active" : "")">
                 <span class="material-icons-sharp">
                     insights
                 </span>
                 <h3>Analizler</h3>
             </a>
-            <a href="#">
+            <a asp-action="NewsPortal" asp-controller="Admin" class="@(ViewContext.RouteData.Values["controller"].ToString() =="Admin" && ViewContext.RouteData.Values["action"].ToString() == "NewsPortal" ? "active" : "")">
                 <span class="material-icons-sharp">
                     receipt_long
                 </span>
                 <h3>Haberler</h3>
             </a>
-            <a href="#">
+            <a asp-action="Albumes" asp-controller="Admin" class="@(ViewContext.RouteData.Values["controller"].ToString() =="Admin" && ViewContext.RouteData.Values["action"].ToString() == "Albumes" ? "active" : "")">
                 <span class="material-icons-sharp">
                     dashboard
                 </span>
                 <h3>Albümler</h3>
             </a>
-            <a href="#">
+            <a asp-action="Admins" asp-controller="Admin" class="@(ViewContext.RouteData.Values["controller"].ToString() =="Admin" && ViewContext.RouteData.Values["action"].ToString() == "Admins" ? "active" : "")">
                 <span class="material-icons-sharp">
                     person_outline
                 </span>
-                <h3>Users</h3>
+                <h3>Adminler</h3>
             </a>
             
             
-            <a href="#">
+            <a asp-action="Comments" asp-controller="Admin" class="@(ViewContext.RouteData.Values["controller"].ToString() =="Admin" && ViewContext.RouteData.Values["action"].ToString() == "Comments" ? "active" : "")">
                 <span class="material-icons-sharp">
                     mail_outline
                 </span>
                 <h3>Yorumlar</h3>
                 <span class="message-count">27</span>
             </a>
-            <a href="#">
-                <span class="material-icons-sharp">
-                    inventory
-                </span>
-                <h3>Sale List</h3>
-            </a>
-            <a href="#">
+            
+            <a asp-action="BannedUsers" asp-controller="Admin" class="@(ViewContext.RouteData.Values["controller"].ToString() =="Admin" && ViewContext.RouteData.Values["action"].ToString() == "BannedUsers" ? "active" : "")">
                 <span class="material-icons-sharp">
                     report_gmailerrorred
                 </span>
                 <h3>Engellenenler</h3>
             </a>
-            <a href="#">
+            <!--<a href="#">
                 <span class="material-icons-sharp">
                     settings
                 </span>
                 <h3>Ayarlar</h3>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">
-                    add
-                </span>
-                <h3>New Login</h3>
-            </a>
-            <a href="#">
+            </a>-->
+            <a asp-action="Logout" asp-controller="Admin">
                 <span class="material-icons-sharp">
                     logout
                 </span>

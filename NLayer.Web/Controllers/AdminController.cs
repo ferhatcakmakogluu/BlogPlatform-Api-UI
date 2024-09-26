@@ -2,7 +2,7 @@
 using NLayer.Core.DTOs;
 using NLayer.Web.Models;
 using NLayer.Web.Services;
-
+using NLayer.Web.Filters;
 namespace NLayer.Web.Controllers
 {
     public class AdminController : Controller
@@ -37,7 +37,7 @@ namespace NLayer.Web.Controllers
                 //var userInfo = await _userApiService.GetUserByIdAsync(userId);
 
                 //var userNameSurname = $"{userInfo.Name} {userInfo.LastName}";
-                Response.Cookies.Append("userNameSurname", response.Name.ToString(), cookieOptions);
+                Response.Cookies.Append("adminName", response.Name.ToString(), cookieOptions);
 
                 ViewBag.CookieUserId = response.Id;
                 ViewBag.AdminLoginErrorMessage = "";
@@ -49,15 +49,48 @@ namespace NLayer.Web.Controllers
             return View();
         }
 
+        [AdminAuthorize]
         public IActionResult Dashboard()
         {
-            var adminId = Request.Cookies["admin_id"];
-            if(adminId == null)
-            {
-                ErrorViewModel error = new ErrorViewModel() { Errors = new List<string> { "Bu Sayfaya girme yetkiniz yok!"} };
-                return RedirectToActionPermanent("Error", "Home",error);
-            }
             return View();
+        }
+
+        [AdminAuthorize]
+        public IActionResult NewsPortal()
+        {
+            return View();
+        }
+
+        [AdminAuthorize]
+        public IActionResult Albumes()
+        {
+            return View();
+        }
+
+        [AdminAuthorize]
+        public IActionResult Admins()
+        {
+            return View();
+        }
+
+        [AdminAuthorize]
+        public IActionResult Comments()
+        {
+            return View();
+        }
+
+        [AdminAuthorize]
+        public IActionResult BannedUsers()
+        {
+            return View();
+        }
+
+        [AdminAuthorize]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("admin_id");
+            Response.Cookies.Delete("adminName");
+            return RedirectToAction("Index", "Admin");
         }
     }
 }
