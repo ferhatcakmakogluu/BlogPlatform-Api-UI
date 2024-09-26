@@ -2,8 +2,166 @@
     ViewData["Title"] = "Analiz";
     Layout = "_AdminLayout";
 }
-<div class="container">
-    <main role="main" class="pb-3">
-        <h1>deneme</h1>
-    </main>
+<head>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+<!--Analyse start-->
+<div class="analyse-container">
+    <div class="analyse">
+        <div class="sales">
+            <div class="status">
+                <div class="info">
+                    <h3>Toplam Haber</h3>
+                    <h1>126</h1>
+                </div>
+                <div class="progresss">
+                    <svg>
+                        <circle cx="38" cy="38" r="36"></circle>
+                    </svg>
+                    <div class="percentage">
+                        <p>+81%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visits">
+            <div class="status">
+                <div class="info">
+                    <h3>Toplam Albüm</h3>
+                    <h1>10</h1>
+                </div>
+                <div class="progresss">
+                    <svg>
+                        <circle cx="38" cy="38" r="36"></circle>
+                    </svg>
+                    <div class="percentage">
+                        <p>-48%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="searches">
+            <div class="status">
+                <div class="info">
+                    <h3>Toplam Görsel</h3>
+                    <h1>14,147</h1>
+                </div>
+                <div class="progresss">
+                    <svg>
+                        <circle cx="38" cy="38" r="36"></circle>
+                    </svg>
+                    <div class="percentage">
+                        <p>+21%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sales">
+            <div class="status">
+                <div class="info">
+                    <h3>Toplam Ziyaretçi</h3>
+                    <h1>126005</h1>
+                </div>
+                <div class="progresss">
+                    <svg>
+                        <circle cx="38" cy="38" r="36"></circle>
+                    </svg>
+                    <div class="percentage">
+                        <p>+81%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!--Analyse end-->
+
+<!--Picture Comments start-->
+<div class="recent-orders">
+    <h2>Son 10 Görsel Yorumu</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Görsel</th>
+                <th>Albüm Adı</th>
+                <th>Yorum Tarihi</th>
+                <th>Yorum Yapan IP</th>
+                <th>Yorum</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ferhat.jpg</td>
+                <td>Hatıralar</td>
+                <td>30/10/2025</td>
+                <td>198.168.1.10</td>
+                <td>Harika Bir Görsel</td>
+                <td class="action-buttons">
+                    <button class="danger">Sil</button>
+                    <button class="primary">Yoruma Git</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Ferhat.jpg</td>
+                <td>Hatıralar</td>
+                <td>30/10/2025</td>
+                <td>198.168.1.10</td>
+                <td>Harika Bir Görsel</td>
+                <td class="action-buttons">
+                    <button class="danger">Sil</button>
+                    <button class="primary">Yoruma Git</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#">Tüm Görsel Yorumlarını Görüntüle</a>
+</div>
+<!--Picture Comments end-->
+
+<!--News Comment start-->
+<div class="recent-orders">
+    <h2>Son 10 Haber Yorumu</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Haber Başlığı</th>
+                <th>Haber İçeriği</th>
+                <th>Paylaşım Tarihi</th>
+                <th>Yorum Yapan IP</th>
+                <th>Yorum</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Yol Çalışması</td>
+                <td>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloremque commodi quibusdam at, cupiditate ipsum, laborum porro culpa laboriosam nostrum, quia rem nobis suscipit ullam dignissimos aliquid. Nisi, laborum delectus?
+                </td>
+                <td>30/10/2025</td>
+                <td>198.168.1.10</td>
+                <td>Haber için teşekkürler</td>
+                <td class="action-buttons">
+                    <button class="danger">Sil</button>
+                    <button class="primary">Yoruma Git</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Yol Çalışması</td>
+                <td>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloremque commodi quibusdam at, cupiditate ipsum, laborum porro culpa laboriosam nostrum, quia rem nobis suscipit ullam dignissimos aliquid. Nisi, laborum delectus?
+                </td>
+                <td>30/10/2025</td>
+                <td>198.168.1.10</td>
+                <td>Haber için teşekkürler</td>
+                <td class="action-buttons">
+                    <button class="danger">Sil</button>
+                    <button class="primary">Yoruma Git</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#">Tüm Haber Yorumlarını Görüntüle</a>
+</div>
+<!--News Comment end-->

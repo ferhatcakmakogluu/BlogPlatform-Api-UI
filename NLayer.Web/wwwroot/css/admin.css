@@ -99,8 +99,145 @@
             border-radius: var(--border-radius-1);
         }
 
-@media screen and (max-width: 1200px){
-    aside .logo h2 {
+/*Admin - Dashboard*/
+.analyse{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    gap:8px;
+}
+
+.analyse > div {
+    width: inherit;
+    background-color: var(--color-white);
+    padding: 16px;
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .analyse > div:hover {
+        box-shadow: none;
+    }
+
+    .analyse > div .status {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+.analyse h3 {
+    font-size: 1rem;
+}
+
+.analyse .progresss {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+.analyse svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+    .analyse svg circle {
+        fill: none;
+        stroke-width: 10;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+    }
+
+.analyse .sales svg circle {
+    stroke: var(--color-success);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.analyse .visits svg circle {
+    stroke: var(--color-danger);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.analyse .searches svg circle {
+    stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.analyse .progresss .percentage {
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.recent-orders {
+    margin-top: 1.3rem;
+}
+
+.recent-orders h2 {
+    margin-bottom: 0.8rem;
+}
+
+.recent-orders table {
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+}
+
+    .recent-orders table:hover {
+        box-shadow: none;
+    }
+
+.recent-orders table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+    .recent-orders table tbody tr:last-child td {
+        border: none;
+    }
+
+.recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+    .recent-orders tbody button {
+        width: auto;
+        border-radius: 4px;
+        padding: 8px;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+        .recent-orders tbody .action-buttons{
+            display:flex;
+            flex-direction: column;
+            gap: 4px;
+            height: auto;
+        }
+
+
+
+        @media screen and (max-width: 1200px) {
+            aside .logo h2 {
         display: none;
     }
 
@@ -117,6 +254,22 @@
             margin-top: 1.8rem;
         }
 
+    .analyse {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .recent-orders {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 0.8rem;
+    }
+
+        .recent-orders table {
+            width: 83vw;
+        }
 }
 
 @media screen and (max-width: 768px){
@@ -157,6 +310,17 @@
         aside .toggle .close {
             display: inline-block;
             cursor: pointer;
+        }
+
+    .recent-orders {
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+
+        .recent-orders table {
+            width: 100%;
+            margin: 0;
         }
 }
 
