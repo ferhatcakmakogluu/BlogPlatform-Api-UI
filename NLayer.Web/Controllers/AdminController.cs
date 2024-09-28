@@ -49,16 +49,26 @@ namespace NLayer.Web.Controllers
             return View();
         }
 
-        [AdminAuthorize]
+        //[AdminAuthorize]
         public IActionResult Dashboard()
         {
             return View();
         }
 
-        [AdminAuthorize]
+        //[AdminAuthorize]
         public IActionResult NewsPortal()
         {
-            return View();
+            var chartData = new List<NewsDto>
+            {
+                new NewsDto { Id=1,Title="Deneme",Description="Deneme yazısı", ReadCount=100,LikeCount=75,DislikeCount=10 },
+                new NewsDto { Id=2,Title="Deneme",Description="Deneme yazısı", ReadCount=150,LikeCount=89,DislikeCount=35 },
+                new NewsDto { Id=3,Title="Deneme",Description="Deneme yazısı", ReadCount=200,LikeCount=120,DislikeCount=50},
+                new NewsDto { Id=4,Title="Deneme",Description="Deneme yazısı", ReadCount=145,LikeCount=110,DislikeCount=20 },
+                new NewsDto { Id=5,Title="Deneme",Description="Deneme yazısı", ReadCount=250,LikeCount=175,DislikeCount=14 },
+                new NewsDto { Id=6,Title="Deneme",Description="Deneme yazısı", ReadCount=325,LikeCount=250,DislikeCount=5 },
+                new NewsDto { Id=7,Title="Deneme",Description="Deneme yazısı", ReadCount=169,LikeCount=100,DislikeCount=40 }
+            };
+            return View(chartData);
         }
 
         [AdminAuthorize]
